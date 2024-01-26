@@ -832,7 +832,127 @@
 
 
 
+  <script>
+    // Function to handle redirection based on fragments and passwords
+    function redirectBasedOnFragment() {
+        // Get the fragment from the URL
+        var fragment = window.location.hash.substr(1);
 
+        // Define redirection mappings along with passwords
+        var redirections = {
+            'ansh': { url: 'https://anshpreet2442.github.io/sundown/', password: '4757ansh' },
+            'mahip': { url: 'https://pixeldrain.com/', password: '' },
+            'manjeet': { url: 'anshpreet.com', password: '' },
+            'akshit': { url: 'https://pixeldrain.com/', password: '' },
+            'angel': { url: 'https://pixeldrain.com/', },
+            'gobind': { url: 'https://pixeldrain.com/', },
+            'armaan': { url: 'https://pixeldrain.com/', },
+            'nitya': { url: 'https://pixeldrain.com/', },
+            'nabu': { url: 'https://pixeldrain.com/', },
+            'friends': { url: 'https://moviesmod.dev/download-friends-720p-english-seaosn-10/', password: '1234' },
+            'harrypotter': { url: 'https://anshpreet2442.github.io/harrypotter/', password: '' },
+            'gppremium': { url: 'https://drive.google.com/file/d/1Vb_e5zRdXlPmrcbrarsnmcBz7iUbyea8/view?usp=sharing', password: '1234' },
+            'unstoppable': { url: 'https://drive.google.com/file/d/1sPgdR9-CXp37IaH2V7woSqpHvnDL_d2k/view?usp=sharing', password: '' },
+            'qara': { url: 'https://drive.google.com/file/d/1v-aiQyaDL-U0tnWT_2rD3wCbFC4hyUPb/view?usp=sharing', password: '4757ansh' },
+            'spotdl': { url: 'https://anshpreet2442.github.io/spotdl/spotdl.html', password: '' },
+            'ytplayer': { url: 'https://anshpreet2442.github.io/yt5-videolayer/', password: '' },
+            'audiovisual': { url: 'hhttps://anshpreet2442.github.io/audiovisual/', password: '' },
+            'whatsapp': { url: 'https://anshpreet2442.github.io/whatsapplinkgenrator/', password: '' },
+            'whatsapplinkgenerator': { url: 'https://anshpreet2442.github.io/whatsapplinkgenrator/', password: '' },
+            'expensemanager': { url: 'https://anshpreet2442.github.io/expenses/', password: '' },
+            'topmovies': { url: 'https://anshpreet2442.github.io/topmovies/', password: '' },
+            'netflix': { url: 'hhttps://anshpreet2442.github.io/topmovies/netflix.html', password: '' },
+            'premium': { url: 'https://anshpreet2442.github.io/topmovies/premium.html', password: '' },
+            'alpecalove': { url: 'https://anshpreet2442.github.io/alpecalove/', password: '' },
+            'peakyblinder': { url: 'https://anshpreet2442.github.io/spotdlfls/peakyblinders.html', password: '' },
+            'peakyblinders': { url: 'https://anshpreet2442.github.io/spotdlfls/peakyblinders.html', password: '' },
+            'budgettracker': { url: 'https://anshpreet2442.github.io/money-management/', password: '' },
+            'expensetracker': { url: 'https://anshpreet2442.github.io/money-management/', password: '' },
+            'budget': { url: 'https://anshpreet2442.github.io/money-management/', password: '' },
+            'trackexpense': { url: 'https://anshpreet2442.github.io/money-management/', password: '' },
+            'friendsfrontier': { url: 'https://www.friendsfrontier.fun/', password: '' },
+            'pixeldrain': { url: 'https://pixeldrain.com/', password: '' },
+            'friendsfrontier.fun/': { url: 'https://www.friendsfrontier.fun/', password: '' },
+            'frontieroffriends': { url: 'https://www.friendsfrontier.fun/', password: '' },
+            'domain2': { url: 'https://www.friendsfrontier.fun/', password: '' },
+            'gossipgirls5': { url: 'https://pixeldrain.com/l/r2fNYVu1', password: '' },
+            'gossipgirls6': { url: 'https://send.cm/axb5sw0w2f18', password: '' },
+            'hotel1': { url: 'https://www.makemytrip.com/hotels/hotel-details/?hotelId=202312111821446352&_uCurrency=INR&checkin=02012024&checkout=02292024&city=CTXKS&country=IN&filterData=HOUSE_RULES%7CUnmarried%20Couples%20Allowed%5EMERGE_PROPERTY_TYPE%7CVilla&homeStay=true&lat=30.94569&lng=76.9617&locusId=RGCDRH&locusType=region&rank=27&reference=hotel&roomStayQualifier=4e2e16e11e&rsc=1e4e2e16e11e&searchText=Chandigarh%20Capital%20Region&type=region&mtkeys=-8743771846721123297', password: '' },
+            '2024': { url: 'https://anshpreet2442.github.io/2024/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '' },
+            // Add more mappings as needed
+        };
+
+        // Check if the fragment has a corresponding redirection
+        if (redirections.hasOwnProperty(fragment)) {
+            var redirectInfo = redirections[fragment];
+            var password = prompt('Enter the password: [If Exists] , by Default Password is blank , just click ok');
+
+            // Check if the password is correct
+            if (password === redirectInfo.password) {
+                // Redirect to the specified URL
+                window.location.href = redirectInfo.url;
+            } else {
+                alert('Incorrect password. Access denied.');
+            }
+        } else {
+            // Handle the case when no matching redirection is found
+            console.log("No redirection found for the given fragment.");
+        }
+    }
+
+    // Call the redirection function on page load
+    window.onload = redirectBasedOnFragment;
+</script>
 
 
 
